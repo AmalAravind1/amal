@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+    cart items
+{% endblock %}
+
+{% block title %}
+    Your cart -- Xtensible store
+{% endblock %}
+
+{% block content %}
+    {% if cartitems %}
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-9 mb-9">
+                    <h6 class="text-center my_title">Your Cart</h6><br>
+                    <table class="table">
+                        
+                        <tbody>
+                            {% for i in cartitems %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>
+                                        <a href="{{ i.product.get_url }}">
+                                            <img class="img-fluid rounded" src="{{ i.product.image.url }}" width="150px">
+                                        </a>
+                                    </td>
+                                    <td class="product-details">
+                                        <p class="my_title4">
+                                            <b>{{ i.product.name|truncatewords:5 }} </b>
+                                        </p>
+                                        <p>
+                                            SKU: {{ i.product.id }}<br>
+                                            Price: <b>Rs.{{ i.product.price }}</b><br>
+                                            Qty: {{ i.quantity }} * <b>{{ i.product.description|truncatewords:7 }}</b><br>
+                                            <hr>
+                                            <p class="text-right">Total: <b>Rs.{{ i.subtotal }}</b></p>
+                                        </p>
+                                    </td>
+                                    <td class="actions">
+                                        {% if i.product.stock > 0 %}
+                                            <a class="link" href="{% url 'cartappp:cart_add' i.product.id %}">
+                                                <i class="fas fa-plus"></i> 
+                                            </a>
+                                        {% endif %}
+                                        <br>
+                                        <a href="{% url 'cartappp:cart_remove' i.product.id %}">
+                                            <i class="fas fa-minus"></i> 
+                                        </a>
+                                        <br>
+                                        <a href="{% url 'cartappp:cart_delete' i.product.id %}">
+                                            <i class="fas fa-trash"></i> 
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-3">
+                    <div class="text-center">
+                        <h6>Please review the products in the cart before checkout</h6>
+                        <br>
+                        <a class="btn btn-secondary" href="{% url 'shop:allproducts' %}"> Continue Shopping</a>
+                        <br>
+                        <p class="text-center my_title">Rs.{{ total }}</p>
+                        <br>
+                        <a class="btn btn-warning" href=""> Checkout</a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <h6 style="margin-top:50px" class="text-center my_title">Your Cart is Empty</h6>
+        <br>
+    {% endif %}
+{% endblock %}

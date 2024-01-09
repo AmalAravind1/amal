@@ -1,0 +1,148 @@
+body{
+   font-family: 'Open Sans', sans-serif;;
+
+}
+
+
+.nav-bar{
+       letter-spacing: .2em;
+       font-size:14px;
+       text-transform:uppercase;
+}
+.dropdown{
+    letter-spacing: .2em;
+       font-size:14px;
+       text-transform:uppercase;
+}
+
+.my_footer{
+    background-color:LightGray;
+    height:60px;
+}
+.my_footer{
+    padding-top:20px;
+    font-size:14px;
+}
+.my_row_class{
+    padding-top:15px;
+}
+.my_row_class .mx-auto{
+    color:#000;
+    font-size:12px;
+
+}
+.my_image{
+    width:100%;
+    height:auto;
+}
+.my_title{
+    font-size:16px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+}
+.my_image_padding{
+    padding:5px;
+}
+.my_bottom_margin{
+    margin-bottom:10px;
+}
+.card-body h4{
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+}
+/*** productpage ***/
+.my_prod_row_class{
+    padding-top:15px;
+    padding-bottom:20px;
+}
+.my_prod_row_class .mx-auto{
+    color:#000;
+    font-size:12px;
+    text-decoration:none;
+}
+.my_product_title{
+     font-size:26px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    padding-top:15px;
+    padding-bottom:10px;
+}
+.my_search_text{
+    padding-top:20px;
+}
+
+
+
+
+
+
+
+
+
+.container {
+    margin-top: 20px;
+}
+
+.my_title {
+    font-size: 24px;
+}
+
+.my_title4 {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+}
+
+.product-details {
+    width: 60%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #495057;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    color: #212529;
+}
+
+
+.my-5 {
+    margin-bottom: 20px;
+}
+
+.my_title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.fa-solid {
+    transition: color 0.3s ease;
+    margin-right: 10px; 
+}
+
+.fa-solid:last-child {
+    margin-right: 0; /* Remove right margin for the last icon */
+}
+
+/* Optional: Add hover effect to the icons */
+.fa-solid:hover {
+    color: #007bff;
+}
