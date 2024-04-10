@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+    <meta name="description" content="user">
+{% endblock %}
+
+{% block title %}
+    user profile
+{% endblock %}
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}
+

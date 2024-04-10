@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+    <!-- <meta name="description" content="Cart items"> -->
+{% endblock %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">User Profile</div>
+                    <div class="card-body">
+                        <p class="my_title">Username: {{ user.username }}</p>
+                        <p class="my_title">First Name: {{ user.first_name }}</p>
+                        <p class="my_title">Last Name: {{ user.last_name }}</p>
+                        <p class="my_title">Email: {{ user.email }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'movieprofile:edit_profile' %}" class="btn btn-warning">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
